@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page import="com.seoyun.Student %>
+<%@ page import="java.util.*, com.seoyun.Student" %>
 
 <%
 	List<Student> data = new ArrayList<>();
@@ -20,10 +20,19 @@
 현재시간: ${stuff}
 <br><br>
 
-	<c:forEach var="stu" items="${myStudent}">
-		${stu.name}, ${stu.goldCustomer}
-	</c:forEach>
+<table border="1">
+<tr>
+	<th>Name</th>
+	<th>Gold Customer</th>
+</tr>
 
+	<c:forEach var="stu" items="${myStudent}">
+		<tr>
+			<td>${stu.name}</td>
+			<td>${stu.goldCustomer}</td>
+		</tr>
+	</c:forEach>
+</table>
 
 </body>
 
